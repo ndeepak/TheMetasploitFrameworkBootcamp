@@ -1,11 +1,19 @@
 # TheMetasploitFrameworkBootcamp
-This is the Metasploit Framework Bootcamp by INE notes made by [Deepak Nagarkoti](www.github.com/ndeepak).
+This is the Metasploit Framework notes made by [Deepak Nagarkoti](www.github.com/ndeepak).
 
 > Lab Environment Setup
 > 1. The preferred distribution of choice for this bootcamp is [Kali Linux](https://kali.org/downloads).
 > 2. For our target system, we will be utilizing an intentionally vulnerable virtual machine called [Metasploitable3](https://github.com/rapid7/metasploitable3) .
 > 3. Metasploitable3 has two versions based on Win2k8 and Ubuntu 14.04.
 > 4. The OVA virtual machine download: [LINK](https://drive.google.com/drive/folders/1zgqsPZtAFiRj5-vNuvOM_MTc4BYLGRZB?usp=sharing)
+<!-- OVA Download Link:
+https://drive.google.com/uc?id=1-cDEpDRl5_-QWBU8Ckpp_Zep-1-9-EY4
+&export=download
+Metasploitable3 - Ubuntu 14.04
+OVA Download Link:
+https://drive.google.com/file/d/1ImtNcSogVaeK-THv5vFUBHPDFI9y5YHP
+/view?usp=sharin -->
+
 
 ## [Day 1](/Day1/readme.md)
 * Introduction to the Metasploit Framework
