@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div>
+    <h1>1. Introduction To The Metasploit Framework</h1>
     <h2> History of the Metasploit Framework</h2>
     <ul>
         <li>Developed by <a href="https://twitter.com/hdmoore">HD Moore</a> in 2003 </li>
@@ -70,6 +72,74 @@
     <img src="images/mscommunityedition.png" width="350" height="250" alt=""> <hr>
     <h3>Armitage</h3>
     <p> Armitage is a free Java based GUI front-end for the Metasploit Framework that simplifies network discovery, exploitation and post exploitation. </p>
-    <img src="https://www.offensive-security.com/wp-content/uploads/2015/03/Armitage_5_shells.png" width=450 height=400 alt="">
+    <img src="images/armitage.png" width=450 height=400 alt="">
+    </div>
+    <div>
+    <h1>2. Metasploit Framework Architecture</h1>
+    <h2>MSF Architecture</h2>
+    <table>
+        <tr>
+            <td>
+                <img src="images/m-architecture.jpg" width="400" height="300" alt="">
+            </td>
+            <td>
+                <ul>
+                    <li>A module in the context of msf, is a piece of code that can be utilized by the MSF. ( <i>anyone can create in ruby</i> ) </li>
+                    <li>The MSF libraries facilitate the execution of modules without having to write the code necessary in order to execute them. (via <i>API</i> ) </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <h2>MSF Modules</h2>
+    <dl>
+        <dt>Exploit</dt>
+        <dd>A module that is used to take advantage of vulnerability and is typically paired with a payload.</dd>
+        <dt>Payload</dt>
+        <dd>Code that is delivered by MSF and remotely executed on the target after successful exploitation. An example of a payload is a reverse shell that initiates a connection from the target system back to the attacker. E.g. <i>Reverse Shell payload</i></dd>
+        <dt>Encoder</dt>
+        <dd>Used to encode payloads in order to avoid AV(anti-virus) detection. For e.g. shikata_ga_nai is used to encode Windows payloads.</dd>
+        <dt>NOPS</dt>
+        <dd> Used to ensure that payloads sizes are consistent and ensure the stability of a payload when executed in memory. (History from Assembly Programming)</dd>
+        <dt>Post</dt>
+        <dd>- Modules used to perform functionality associated with post-exploitation.(Local Enum, shells, dumping credentials, etc.)</dd>
+        <dt>Auxiliary</dt>
+        <dd> A module that is used to perform additional functionality like port scanning and enumeration. (Fuzzing, brute-forcing)</dd>
+    </dl>
+    <h3>MSF Payload Types</h3>
+    <p>When working with exploits, MSF provides you with two types of payload, paired with an exploit.</p>
+    <ol>
+        <li>
+            <b>Non-Staged Payload(single/inline)- </b>
+            Payload that is sent to the target system in one part along with the exploit.
+        </li>
+        <li>
+            <b>Staged Payload -</b>
+            A staged payload is sent to the target in two parts:
+            <ul>
+                <li>The first part ( <b>stager</b> ) contains a payload that is used to establihs a reverse connection back to the attacker's system, downloads the second part of the payload ( <b>stage</b> ) and executes it on the target system.</li>
+            </ul>
+        </li>
+    </ol>
+    <h4>Stages & Stage</h4>
+    <ol>
+        <li> Stagers - Stagers are typically used to establish a stable communication channel between the attacker and target, after which a stage payload is downloaded and executed on the target system.</li>
+        <li> Stage - Payloads that are downloaded by the stager, and are typically used to execute a single command or spawn a reverse connection back to the attacker's system. </li>
+    </ol>
+    <h3>Meterpreter Payload</h3>
+    <p>
+        The Meterpreter (Meta-Interpreter) payload is an advanced multi-functional payload that is executed in memory on the target system making it difficult to detect. <br>
+        It communicates over a stager socket and provides an attacker with an interactive command interpreter on the target system that facilitates the execution of system commands, file system navigation, keylogging and much more.
+    </p>
+
+    <h3>MSF File System Structure</h3>
+    <p>The MSF file system is organized in a simple and easy to understand format and is organized into various directories.</p>
+    <img src="images/msffilestructure.png" width="500" height="350" alt="">
+    
+    <h3>MSF Module Locations</h3>
+    <ul>
+        <li>MSF stores modules under the following directory on Linux systems: <br> /usr/share/metasploit-framework/modules</li>
+        <li>+ User specified modules are stored under the following directory on Linux systems: <br> ~/.ms4/modules</li>
+    </ul>
+    </div>
 </body>
 </html>
